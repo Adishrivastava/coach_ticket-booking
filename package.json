@@ -5,6 +5,7 @@
 	"main": "index.js",
 	"author": "Aditya Shrivastava",
 	"license": "ISC",
+	"homepage": ".",
 	"devDependencies": {
 		"typescript": "^4.4.4"
 	},
