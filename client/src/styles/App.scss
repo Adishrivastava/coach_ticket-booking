@@ -1,0 +1,204 @@
+$priColor: rgb(0, 238, 255);
+$selectedSeats: green;
+$filledSeats: rgb(0, 85, 255);
+$emptySeats: grey;
+$main: rgb(25, 80, 168);
+
+@font-face {
+	font-family: 'Satoshi';
+	src: url('../fonts/WEB/fonts/Satoshi-Black.ttf');
+	src: url('../fonts/WEB/fonts/Satoshi-Bold.ttf'),
+		url('../fonts/WEB//fonts//Satoshi-Light.ttf'),
+		url('../fonts/WEB//fonts//Satoshi-Regular.ttf'),
+		url('../fonts/WEB//fonts//Satoshi-Medium.ttf'),
+		url('../fonts/WEB//fonts//Satoshi-Variable.ttf'),
+		url('../fonts/WEB//fonts//Satoshi-VariableItalic.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+*,
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Satoshi', sans-serif;
+}
+
+// > general tags scss
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+	-moz-appearance: textfield;
+}
+
+button {
+	border-radius: 1rem;
+	border: none;
+	padding: 0.6rem 1rem;
+	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+// > Navbar styles
+.navbar {
+	background-color: rgb(25, 80, 168);
+	border-bottom: 1px solid #e7e7e7;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+	font-size: 14px;
+	font-weight: 500;
+	height: 60px;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	width: auto;
+	padding: 0 15px;
+	z-index: 1030;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	.navbar-brand {
+		color: #e7e7e7;
+	}
+	.refresh-button {
+		background-color: antiquewhite;
+	}
+}
+
+// > homepage section
+.homepage {
+	height: 90vh;
+	padding-top: 10vh;
+}
+
+.main-content {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	height: 100%;
+	.book-ticket {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		.book-tickets {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+			h5 {
+				margin-bottom: 30px;
+				font-size: 1.5rem;
+				color: $main;
+			}
+
+			.main-form {
+				display: flex;
+				flex-direction: column;
+
+				.seats-input {
+					border: none;
+					border-radius: 1.5rem;
+					padding: 2rem;
+					font-size: 1.5rem;
+					outline: none;
+					text-align: center;
+					background-color: antiquewhite;
+					&active,
+					&focus,
+					&:hover {
+						border: none;
+					}
+				}
+
+				button {
+					margin-top: 20px;
+				}
+			}
+		}
+	}
+
+	.coach-section {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		.signs {
+			display: flex;
+			.sign {
+				margin: 0px 10px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				.empty-circle {
+					width: 10px;
+					height: 10px;
+					border-radius: 50%;
+					background-color: $emptySeats;
+				}
+				.booked-circle {
+					width: 10px;
+					height: 10px;
+					border-radius: 50%;
+					background-color: $filledSeats;
+				}
+				.selected-circle {
+					width: 10px;
+					height: 10px;
+					border-radius: 50%;
+					background-color: $selectedSeats;
+				}
+				.sign-text {
+					margin-left: 10px;
+					font-size: 1rem;
+					color: $main;
+				}
+			}
+		}
+		.train-coach {
+			.row-section {
+				display: flex;
+				margin-top: 10px;
+				.seat {
+					cursor: pointer;
+					width: 30px;
+					height: 30px;
+					border-radius: 50%;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					background-color: $emptySeats;
+					margin: 0px 10px;
+					&.selected {
+						background-color: $selectedSeats;
+					}
+					&.booked {
+						background-color: $filledSeats;
+					}
+				}
+				.empty-seat {
+					background-color: $emptySeats;
+				}
+				.selected-seat {
+					background-color: $selectedSeats;
+				}
+				.filled-seat {
+					background-color: $filledSeats;
+				}
+			}
+		}
+	}
+}
