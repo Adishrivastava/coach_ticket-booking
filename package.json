@@ -1,0 +1,17 @@
+{
+	"name": "ticket_booking",
+	"version": "1.0.0",
+	"main": "index.js",
+	"repository": "https://github.com/Adishrivastava/ticket-booking.git",
+	"author": "Aditya Shrivastava",
+	"license": "MIT",
+	"private": false,
+	"dependencies": {
+		"concurrently": "^5.0.0"
+	},
+	"scripts": {
+		"server": "cd backend && nodemon index.js",
+		"client": "cd frontend && yarn start",
+		"dev": "concurrently \"yarn run server\" \"yarn run client\""
+	}
+}
